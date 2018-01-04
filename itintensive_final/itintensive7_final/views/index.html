@@ -1,0 +1,154 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>선생님 페이지</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../public/assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="../public/assets/css/noscript.css" /></noscript>
+	<style>
+
+		.buttonclick,
+		buttonclick::after {
+			-webkit-transition: all 0.3s;
+			-moz-transition: all 0.3s;
+			-o-transition: all 0.3s;
+			transition: all 0.3s;
+		}
+
+		.buttonclick {
+			background: none;
+			border: 3px solid #fff;
+			border-radius: 10px;
+			color: #fff;
+			display: block;
+			font-size: 0.8em;
+			font-weight: bold;
+			font-family: "배달의민족 주아";
+			padding: 0.8em 1em;
+			position: relative;
+			top : 400px;
+			left : 400px;
+			text-transform: uppercase;
+		}
+
+		.buttonclick::before,
+		.buttonclick::after {
+			background: #fff;
+			content: '';
+			position: relative;
+			top : 400px;
+			left : 400px;
+			z-index: -1;
+		}
+
+		.buttonclick:hover {
+			color: #2ecc71;
+		}
+
+
+	</style>
+
+	</head>
+	<body>
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Wrapper -->
+					<div id="wrapper">
+
+						<!-- Panel (Banner) -->
+							<section class="panel banner right">
+								<div class="content color0 span-3-75">
+									<h1 class="major">안녕하세요!<br />
+										선생님 페이지 입니다.</h1>
+									<p>저희 SM에서는 빅데이터 분석을 통한 <br><strong>다양한 학생 관리 Service</strong>를 제공하고 있습니다. <br> </p>
+									<ul class="actions">
+										<li><a href="#first" class="button special color1 circle icon fa-angle-right">Next</a></li>
+									</ul>
+								</div>
+								<div class="image filtered span-1-75" data-position="25% 25%">
+									<img src="../public/images/pic01.jpg" alt="" />
+								</div>
+							</section>
+
+						<!-- Panel (Spotlight) -->
+							<section class="panel spotlight medium right" id="first">
+								<div class="content span-7">
+									<h2 class="major">전체 학생 관리</h2>
+									<p>본 페이지에서는 전체 학생들에 관한 정보가 있습니다. <br> 학교, 학년, 위치, 폭력성 등 다양한 Data들이 있습니다.</p>
+									<ul class="actions">
+										<li><a class="button special color1 circle icon 	fa fa-angle-up" onclick="movepage1()">Next</a></li>
+										<script type="text/javascript">
+                                            function movepage1(){
+                                                location.href = "http://192.168.0.11:3001/studentlist"
+                                            }
+										</script>
+									</ul>
+								</div>
+								<div class="image filtered tinted" data-position="top left">
+									<img src="../public/images/pic02.jpg" alt="" />
+								</div>
+							</section>
+
+						<!-- Panel -->
+							<section class="panel color1">
+								<div class="intro joined">
+									<h2 class="major">개별 학생 관리</h2>
+									<p>본 페이지에서는 학생 개개인별 관리 Service를 제공하고 있습니다. 본 Service를 통해 학생 개개인 특성에 맞는 교육을 할 수 있습니다.</p>
+									<ul class="actions">
+										<li><a class="button special color1 circle icon 	fa fa-angle-up" onclick="movepage2()">Next</a></li>
+										<script type="text/javascript">
+                                            function movepage2(){
+                                                location.href = "/teacher2"
+                                            }
+										</script>
+									</ul>
+								</div>
+								<div class="inner">
+									<ul class="grid-icons three connected">
+										<li><span class="icon fa-diamond"><span class="label">Lorem</span></span></li>
+										<li><span class="icon fa-camera-retro"><span class="label">Ipsum</span></span></li>
+										<li><span class="icon fa-cog"><span class="label">Dolor</span></span></li>
+										<li><span class="icon fa-paper-plane"><span class="label">Sit</span></span></li>
+										<li><span class="icon fa-bar-chart"><span class="label">Amet</span></span></li>
+										<li><span class="icon fa-code"><span class="label">Nullam</span></span></li>
+									</ul>
+								</div>
+							</section>
+
+						<!-- Panel (Spotlight) -->
+							<section class="panel spotlight large left">
+								<div class="content span-5">
+									<h2 class="major">학생 변화 관리</h2>
+									<p>본 페이지에서는 학생 설문 조사에 대한 관리 Service를 제공하고 있습니다. 본 Service를 통해 설문조사에 따른 학생의 성향 변화를 볼 수 있습니다.</p>
+									<ul class="actions">
+										<li><a class="button special color1 circle icon 	fa fa-angle-up" onclick="movepage8()">Next</a></li>
+										<script type="text/javascript">
+                                            function movepage8(){
+                                                location.href = "http://192.168.0.11:3001/graph"
+                                            }
+										</script>
+									</ul>
+								</div>
+								<div class="image filtered tinted" data-position="top right">
+									<img src="../public/images/pic03.jpg" alt="" />
+								</div>
+							</section>
+
+						<!-- Copyright -->
+							<div class="copyright">&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</div>
+
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="../public/assets/js/jquery.min.js"></script>
+			<script src="../public/assets/js/skel.min.js"></script>
+			<script src="../public/assets/js/main.js"></script>
+
+	</body>
+</html>

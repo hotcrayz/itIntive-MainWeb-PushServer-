@@ -1,0 +1,119 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>개인 화면</title>
+    <style>
+        * {
+            margin:0;
+        }
+        a, a:visited {
+            text-decoration:none;
+            margin:5px 15px;
+            color:white;
+        }
+        h1 {
+            margin-top:25%;
+            font-size:100px;
+            color:#eee;
+            text-shadow:2px 2px 5px black;
+            text-align:center;
+        }
+
+        h2 {
+            font-size:20px;
+            color:lightyellow;
+            text-align:center;
+        }
+    </style>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js" type="text/javascript"></script>
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.16/css/jquery.dataTables.min.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.16/js/jquery.dataTables.min.js" type="text/javascript"></script>
+
+
+    <select id="sel1" onchange="show(this)">
+        <option value="">-- Select --</option>
+    </select>
+
+
+    <p id="msg"></p>
+
+
+    <style>
+
+        .uitotal{
+            background-color: #466368;
+            background: linear-gradient(to left, #f6f1d3, #648880 85%, #293f50);
+            border-radius: 6px;
+            height: 550px;
+            font-size:1.4em;
+            font-family: "배달의민족 주아";
+            color:ghostwhite;
+        }
+
+    </style>
+
+
+</head>
+
+<body class="uitotal">
+<h1> 학생을 선택하세요 </h1>
+
+
+<script>
+    window.onload = populateSelect();
+
+    function populateSelect() {
+        // THE JSON ARRAY.
+        var birds = [{"_id":"5a13e4f0f6ef4224d0cfee69","DEC_lat":456.7,"DEC_lon":345.6,"SOS_lat":234.5,"SOS_lon":123.1,"ViolenceProb":59.1,"familyAtt":31,"childID":"NONE","password":"1205","status1":"student","content1":"고광표","title1":"kkp","__v":0},{"_id":"5a16521b75aece20a47919a4","DEC_lat":123.4,"DEC_lon":414.1,"SOS_lat":123.1,"SOS_lon":412.1,"ViolenceProb":29,"familyAtt":28,"childID":"NONE","password":"1234","status1":"student","content1":"곽규리","title1":"Guri","__v":0},{"_id":"5a16525775aece20a47919a5","DEC_lat":1441,"DEC_lon":4135,"SOS_lat":31424,"SOS_lon":12412,"ViolenceProb":12.5,"familyAtt":40,"childID":"NONE","password":"43212","status1":"student","content1":"윤진수","title1":"Kyun","__v":0}];
+
+        var ele = document.getElementById('sel1');
+
+        for (var i = 0; i < birds.length; i++) {
+            // POPULATE SELECT ELEMENT WITH JSON.
+            ele.innerHTML = ele.innerHTML +
+                '<option value="' + birds[i]['ViolenceProb'] +'">' + birds[i]['content1'] + '</option>';
+        }
+    }
+
+
+    function show(ele) {
+        // GET THE SELECTED VALUE FROM <select> ELEMENT AND SHOW IT.
+
+        if(ele.value >= 30) {
+            var msg1 = document.getElementById('msg');
+            msg1.innerHTML = '이름: <b>' + ele.options[ele.selectedIndex].text + '</b> </br>' +
+                '폭력성: <b>' + ele.value + ' </b> </br></br></br></br>' +
+                '위 학생의 경우 폭력성이 상당히 높습니다. 필히 관리가 필요 합니다'+ '</br></br>' +
+                '아래 링크 참조'+ '</br></br>' +
+                '<a href="http://www.jikim.net/"> 청예단 link</a>' + ' -> 청소년 폭력 예방 재단'+'</br>' +
+                '<a href="http://www.safe182.go.kr/index.do"> 안전 드림 link</a>' + '-> 아동 장애인 청소년을 지키는 곳'
+        }
+        if (ele.value >= 20 && ele.value<30 ){
+            var msg2 = document.getElementById('msg');
+            msg2.innerHTML = '이름: <b>' + ele.options[ele.selectedIndex].text + '</b> </br>' +
+                '폭력성: <b>' + ele.value + ' </b></br></br></br></br>' +
+                '위 학생의 경우 폭력성이 약간 있습니다. 주의해야 합니다.' + '</br>' +
+                '아버지의 관심이 좀 더 필요 합니다.' + '</br></br>' +
+                '아래 링크 참조' + '</br></br>' +
+                '<a href="http://www.familynet.or.kr/"> 건강가정지원센터 link</a>' + '->여성부에서 시행하는 가족정책의 주요 전달 체계'
+        }
+        if (ele.value >= 10 && ele.value<20 ){
+            var msg2 = document.getElementById('msg');
+            msg2.innerHTML = '이름: <b>' + ele.options[ele.selectedIndex].text + '</b> </br>' +
+                '폭력성: <b>' + ele.value + ' </b></br></br></br></br>' +
+                '위 학생의 경우 폭력성이 별로 없습니다. 착한 학생입니다. '
+        }
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+{
+  "name": "gcm-push",
+  "version": "0.0.1",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4",
+    "mongoose": "^4.4.12",
+    "morgan": "^1.7.0",
+    "node-gcm": "^0.14.0",
+    "socket.io": "^1.4.5"
+  },
+  "description": "Visit the following url and register your app. Download the **google-services.json** file and note the API Key.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
